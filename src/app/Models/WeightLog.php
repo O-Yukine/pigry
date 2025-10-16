@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class WeightLog extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'weight',
+        'date',
+        'calories',
+        'exercise_time',
+        'exercise_content'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
