@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="form__group-content">
                                     <div class="form__input--date">
-                                        <input type="date" name="created_at" placeholder="" />
+                                        <input type="date" name="date" placeholder="" />
                                     </div>
                                     <div class="form__error">
                                         <!--バリデーション機能を実装したら記述します。-->
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="form__group-content">
                                     <div class="form__input--text">
-                                        <input type="text" name="calory" placeholder="1200" />
+                                        <input type="text" name="calories" placeholder="1200" />
                                     </div>
                                     <div class="form__error">
                                         <!--バリデーション機能を実装したら記述します。-->
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="form__group-content">
                                     <div class="form__input--text">
-                                        <input type="text" name="time" placeholder="1200" />
+                                        <input type="time" name="exercise_time" placeholder="1200" />
                                     </div>
                                     <div class="form__error">
                                         <!--バリデーション機能を実装したら記述します。-->
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="form__group-content">
                                     <div class="form__input--textarea">
-                                        <textarea name="content" placeholder="運動内容を追加"></textarea>
+                                        <textarea name="exercise_content" placeholder="運動内容を追加"></textarea>
                                     </div>
                                 </div>
                             </div>

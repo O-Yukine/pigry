@@ -96,7 +96,6 @@
 
 .form__group {
     margin-bottom: 15px;
-    text-align: center;
 }
 
 .form__label--required {
@@ -116,7 +115,7 @@
 .form__input--text input,
 .form__input--textarea textarea {
     padding: 10px;
-    width: 100px;
+    width: 250px;
     border: 1px solid #ddd;
     border-radius: 3px;
 
@@ -137,7 +136,7 @@
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
+    width: 80px;
     height: 50px;
     border: none;
     border-radius: 3px;
