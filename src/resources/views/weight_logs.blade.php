@@ -7,12 +7,7 @@
 @section('content')
     <div class="attendance__content">
         <div class="attendance__panel">
-            <form class="attendance__button">
-                <button class="attendance__button-submit" type="submit">勤務開始</button>
-            </form>
-            <form class="attendance__button">
-                <button class="attendance__button-submit" type="submit">勤務終了</button>
-            </form>
+
             <!-- 🔘 モーダルを開くボタン -->
             <a href="#weight-modal" class="open-modal-btn">データ追加</a>
 
@@ -23,7 +18,7 @@
                 <div class="modal__inner">
                     <div class="modal__content">
                         <h2>Weight Logを追加</h2>
-                        <form action="/" method="POST">
+                        <form action="/weight_logs/create" method="POST">
                             @csrf
                             <div class="form__group">
                                 <div class="form__group-title">
