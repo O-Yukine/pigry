@@ -1,0 +1,17 @@
+.content {
+    height: 900px;
+    background: rgb(200, 197, 197);
+    position: relative;
+    text-align: center;
+}
+
+.target-weight {
+    background: white;
+    width: 40%;
+    height: 40%;
+    border: 1px solid white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\WeightLog;
+use App\Models\WeightTarget;
 use Illuminate\Http\Request;
 
 class WeightController extends Controller
@@ -44,5 +45,18 @@ class WeightController extends Controller
         WeightLog::find($weightLogId)->delete();
 
         return redirect('weight_logs');
+    }
+
+    public function goal()
+    {
+
+        return view('goal_setting');
+    }
+    public function setting(Request $request)
+    {
+        $weight = $request->input();
+        $user_id = auth()->id();
+        $target = WeightTarget::find($user_id)->update($weight);
+        return redirect('weight_logs', compact('target'));
     }
 }
