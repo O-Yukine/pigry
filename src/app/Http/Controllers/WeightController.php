@@ -10,9 +10,9 @@ class WeightController extends Controller
     public function showList()
     {
         $user_id = auth()->id();
-        $weight = WeightLog::where('user_id', $user_id)->get();
+        $weights = WeightLog::where('user_id', $user_id)->get();
 
-        return view('weight_logs', compact('weight'));
+        return view('weight_logs', compact('weights'));
     }
 
     public function create(Request $request)
@@ -20,6 +20,28 @@ class WeightController extends Controller
         $weights = $request->only('date', 'weight', 'calories', 'exercise_time', 'exercise_content');
         $weights['user_id'] = auth()->id();
         WeightLog::create($weights);
+
+        return redirect('weight_logs');
+    }
+
+    public function detail($weightLogId)
+    {
+        $weight = WeightLog::find($weightLogId);
+
+        return view('detail', compact('weight'));
+    }
+
+    public function update(Request $request, $weightLogId)
+    {
+        $weight = $request->only(['date', 'weight', 'calories', 'exercise_time', 'exercise_content']);
+        WeightLog::find($weightLogId)->update($weight);
+
+        return redirect('weight_logs');
+    }
+
+    public function destroy($weightLogId)
+    {
+        WeightLog::find($weightLogId)->delete();
 
         return redirect('weight_logs');
     }

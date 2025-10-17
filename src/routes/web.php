@@ -17,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
     Route::get('/weight_logs', [WeightController::class, 'showList']);
     Route::post('/weight_logs/create', [WeightController::class, 'create']);
+    Route::get('/weight_logs/{weightLogId}', [WeightController::class, 'detail']);
+    Route::patch('/weight_logs/{weightLogId}/update', [WeightController::class, 'update']);
+    Route::get('/weight_logs/{weightLogId}/delete', [WeightController::class, 'destroy']);
 });

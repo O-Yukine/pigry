@@ -99,16 +99,27 @@
         <div class="attendance-table">
             <table class="attendance-table__inner">
                 <tr class="attendance-table__row">
-                    <th class="attendance-table__header">名前</th>
-                    <th class="attendance-table__header">開始時間</th>
-                    <th class="attendance-table__header">終了時間</th>
+                    <th class="attendance-table__header">日付</th>
+                    <th class="attendance-table__header">体重</th>
+                    <th class="attendance-table__header">食事摂取カロリー</th>
+                    <th class="attendance-table__header">運動時間</th>
+                    <th class="attendance-table__header">運動内容</th>
+                    <th class="attendance-table__header">編集</th>
                 </tr>
-                <tr class="attendance-table__row">
-                    <td class="attendance-table__item">サンプル太郎</td>
-                    <td class="attendance-table__item">サンプル</td>
-                    <td class="attendance-table__item">サンプル</td>
-                </tr>
+                @foreach ($weights as $weight)
+                    <tr class="attendance-table__row">
+                        <td class="attendance-table__item">{{ $weight->date }}</td>
+                        <td class="attendance-table__item">{{ $weight->weight }}</td>
+                        <td class="attendance-table__item">{{ $weight->calories }}</td>
+                        <td class="attendance-table__item">{{ $weight->exercise_time }}</td>
+                        <td class="attendance-table__item">{{ $weight->exercise_content }}</td>
+                        <td class="attendance-table__item">
+                            <form action="/weight_logs/{{ $weight->id }}" class="form" method="get">
+                                <button>更新</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
             </table>
         </div>
-    </div>
-@endsection
+    @endsection
