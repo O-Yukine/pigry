@@ -7,7 +7,23 @@
 @section('content')
     <div class="attendance__content">
         <div class="attendance__panel">
+            <div class="weight-table">
+                <table class="weight-table__inner">
+                    <tr class="weight-table__row">
+                        <th class="weight-table__header">目標体重</th>
+                        <th class="weight-table__header">目標まで</th>
+                        <th class="weight-table__header">最新体重</th>
+                    </tr>
+                    <tr class="weight-table__row">
+                        <td class="weight-table__item">
+                            {{ $weight_target->target_weight }}kg</td>
+                        <td class="weight-table__item">{{ $remaining }}kg</td>
+                        <td class="weight-table__item">{{ $latest_weight->weight }}kg
+                        </td>
+                    </tr>
+                </table>
 
+            </div>
             <!-- 🔘 モーダルを開くボタン -->
             <a href="#weight-modal" class="open-modal-btn">データ追加</a>
 

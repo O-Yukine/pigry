@@ -33,12 +33,23 @@ class WeightController extends Controller
 
     public function showList()
     {
-        $user_id = auth()->id();
-        $weights = WeightLog::where('user_id', $user_id)->get();
+        // $user_id = auth()->id();
+        // $weight_target = WeightTarget::where('user_id', $user_id)->get();
 
-        $weight_target = WeightTarget::where('user_id', $user_id)->get();
+        // return view('weight_logs', compact('weights', 'weight_target'));
 
-        return view('weight_logs', compact('weights', 'weight_target'));
+        $user = auth()->user();
+        $weight_target = $user->weightTarget;
+        $weights = WeightLog::where('user_id', $user->id)->get();
+
+        $latest_weight = $weights->sortByDesc('date')->first();
+
+        $remaining = null;
+        if ($weight_target && $latest_weight) {
+            $remaining = $latest_weight->weight - $weight_target->target_weight;
+        }
+
+        return view('weight_logs', compact('weight_target', 'weights', 'latest_weight', 'remaining'));
     }
 
     public function create(Request $request)

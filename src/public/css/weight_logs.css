@@ -3,6 +3,29 @@
     width: 70%;
 }
 
+.weight-table {
+    margin: 30px auto;
+    width: 70%;
+    text-align: center;
+}
+
+.weight-table__inner {
+    width: 100%;
+}
+
+.weight-table__header {
+    padding: 12px;
+    width: 30%;
+    border-right: 1px solid #030303;
+}
+
+.weight-table__item {
+    padding: 12px;
+    width: 30%;
+    font-weight: bold;
+    border-right: 1px solid #030303;
+}
+
 .attendance__button {
     width: 100%;
     text-align: center;
