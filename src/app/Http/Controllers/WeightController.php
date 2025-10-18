@@ -51,6 +51,31 @@ class WeightController extends Controller
 
         return view('weight_logs', compact('weight_target', 'weights', 'latest_weight', 'remaining'));
     }
+    public function search(Request $request)
+    {
+        $user = auth()->user();
+
+        $date_from = $request->input('from');
+        $date_until = $request->input('until');
+
+        // dd($date_from, $date_until);
+
+        $weights = WeightLog::where('user_id', $user->id)
+            ->when($date_from && $date_until, function ($query) use ($date_from, $date_until) {
+                $query->whereBetween('date', [$date_from, $date_until]);
+            })->get();
+
+        $weight_target = $user->weightTarget;
+        $current_weights = WeightLog::where('user_id', $user->id)->get();
+
+        $latest_weight = $current_weights->sortByDesc('date')->first();
+
+        $remaining = null;
+        if ($weight_target && $latest_weight) {
+            $remaining = $latest_weight->weight - $weight_target->target_weight;
+        }
+        return view('weight_logs', compact('weight_target', 'weights', 'latest_weight', 'remaining'));
+    }
 
     public function create(Request $request)
     {

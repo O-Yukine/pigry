@@ -31,9 +31,25 @@
     text-align: center;
 }
 
-.attendance__button-submit {
+.attendance__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+.weight-logs__contents {
+    margin: 30px auto;
+    width: 70%;
+    text-align: center;
+}
+.weight-logs__search {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.open-modal-btn {
+    text-decoration: none;
     padding: 5px;
-    width: 30%;
+    width: 100px;
     height: 50px;
     border: none;
     border-radius: 3px;
@@ -41,34 +57,27 @@
     color: #fff;
     cursor: pointer;
 }
-
-.attendance__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
-}
-
-.attendance-table {
+.weight-logs__table {
     margin: 30px auto;
-    width: 70%;
+    width: 100%;
     text-align: center;
 }
 
-.attendance-table__inner {
+.weight-logs__table-inner {
     width: 100%;
 }
 
-.attendance-table__row {
+.weight-logs__table-row {
     border-bottom: 1px solid #ddd;
 }
 
-.attendance-table__header {
+.weight-logs__table-header {
     padding: 12px;
     width: 20%;
     font-weight: bold;
 }
 
-.attendance-table__item {
+.weight-logs__table-item {
     padding: 12px;
     width: 20%;
 }
@@ -97,7 +106,16 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
 }
-
+.weight-logs__button-submit {
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
 /* モーダルの中身 */
 .modal__inner {
     position: absolute;
