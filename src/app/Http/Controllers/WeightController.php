@@ -2,18 +2,43 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
 use Illuminate\Http\Request;
 
 class WeightController extends Controller
 {
+    public function showWeightRegister()
+    {
+        return view('register_step2');
+    }
+    public function storeWeightRegister(Request $request)
+    {
+        $user = auth()->user();
+        User::where('id', auth()->id())->update(['weight_register' => true]);
+
+        $weight_register = $request->only(['target_weight']);
+        $weight_register['user_id'] = $user->id;
+        WeightTarget::create($weight_register);
+
+        WeightLog::create([
+            'user_id' => $user->id,
+            'weight' => $request->input('weight'),
+            'date' => now(),
+        ]);
+
+        return redirect('weight_logs');
+    }
+
     public function showList()
     {
         $user_id = auth()->id();
         $weights = WeightLog::where('user_id', $user_id)->get();
 
-        return view('weight_logs', compact('weights'));
+        $weight_target = WeightTarget::where('user_id', $user_id)->get();
+
+        return view('weight_logs', compact('weights', 'weight_target'));
     }
 
     public function create(Request $request)
@@ -56,7 +81,8 @@ class WeightController extends Controller
     {
         $weight = $request->input();
         $user_id = auth()->id();
-        $target = WeightTarget::find($user_id)->update($weight);
+        $target = WeightTarget::where('user_id', $user_id)->update($weight);
+
         return redirect('weight_logs', compact('target'));
     }
 }
