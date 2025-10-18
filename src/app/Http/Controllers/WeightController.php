@@ -72,17 +72,22 @@ class WeightController extends Controller
         return redirect('weight_logs');
     }
 
-    public function goal()
+    public function showTargetWeight()
     {
+        $user = auth()->user();
+        $target_weight = $user->weightTarget;
 
-        return view('goal_setting');
+        return view('goal_setting', compact('target_weight'));
     }
-    public function setting(Request $request)
-    {
-        $weight = $request->input();
-        $user_id = auth()->id();
-        $target = WeightTarget::where('user_id', $user_id)->update($weight);
 
-        return redirect('weight_logs', compact('target'));
+    public function updateTargetWeight(Request $request)
+    {
+        $user_id = auth()->id();
+
+        WeightTarget::where('user_id', $user_id)->update([
+            'target_weight' => $request->input('target_weight')
+        ]);
+
+        return redirect('weight_logs');
     }
 }
