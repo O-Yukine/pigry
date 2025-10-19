@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateWeightLogsRequest;
 
 class WeightController extends Controller
 {
@@ -51,6 +52,7 @@ class WeightController extends Controller
 
         return view('weight_logs', compact('weight_target', 'weights', 'latest_weight', 'remaining'));
     }
+
     public function search(Request $request)
     {
         $user = auth()->user();
@@ -77,7 +79,8 @@ class WeightController extends Controller
         return view('weight_logs', compact('weight_target', 'weights', 'latest_weight', 'remaining'));
     }
 
-    public function create(Request $request)
+
+    public function create(CreateWeightLogsRequest $request)
     {
         $weights = $request->only('date', 'weight', 'calories', 'exercise_time', 'exercise_content');
         $weights['user_id'] = auth()->id();
@@ -86,6 +89,7 @@ class WeightController extends Controller
         return redirect('weight_logs');
     }
 
+
     public function detail($weightLogId)
     {
         $weight = WeightLog::find($weightLogId);
@@ -93,7 +97,8 @@ class WeightController extends Controller
         return view('detail', compact('weight'));
     }
 
-    public function update(Request $request, $weightLogId)
+
+    public function update(CreateWeightLogsRequest $request, $weightLogId)
     {
         $weight = $request->only(['date', 'weight', 'calories', 'exercise_time', 'exercise_content']);
         WeightLog::find($weightLogId)->update($weight);

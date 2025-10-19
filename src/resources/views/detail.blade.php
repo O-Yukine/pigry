@@ -21,7 +21,9 @@
                                 <input type="date" name="date" value="{{ $weight->date }}" placeholder="" />
                             </div>
                             <div class="form__error">
-                                <!--バリデーション機能を実装したら記述します。-->
+                                @error('date')
+                                    {{ $message }}
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -34,7 +36,9 @@
                                 <input type="text" name="weight" value="{{ $weight->weight }}" placeholder="50.0" />
                             </div>
                             <div class="form__error">
-                                <!--バリデーション機能を実装したら記述します。-->
+                                @error('weight')
+                                    {{ $message }}
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -47,7 +51,9 @@
                                 <input type="text" name="calories" value="{{ $weight->calories }}" />
                             </div>
                             <div class="form__error">
-                                <!--バリデーション機能を実装したら記述します。-->
+                                @error('calories')
+                                    {{ $message }}
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -60,7 +66,9 @@
                                 <input type="time" name="exercise_time" value="{{ $weight->exercise_time }}" />
                             </div>
                             <div class="form__error">
-                                <!--バリデーション機能を実装したら記述します。-->
+                                @error('exersise_time')
+                                    {{ $message }}
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -71,6 +79,11 @@
                         <div class="form__group-content">
                             <div class="form__input--textarea">
                                 <textarea name="exercise_content">{{ $weight->exercise_content }}</textarea>
+                            </div>
+                            <div class="form__error">
+                                @error('exersise_content')
+                                    {{ $message }}
+                                @enderror
                             </div>
                         </div>
                     </div>
