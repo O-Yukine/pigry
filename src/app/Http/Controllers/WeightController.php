@@ -121,7 +121,7 @@ class WeightController extends Controller
         return view('goal_setting', compact('target_weight'));
     }
 
-    public function updateTargetWeight(Request $request)
+    public function updateTargetWeight(CreateWeightLogsRequest $request)
     {
         $user_id = auth()->id();
 

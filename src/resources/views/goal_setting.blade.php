@@ -14,6 +14,11 @@
                 <input class="target-weight__input"type="text" name="target_weight"
                     value="{{ $target_weight->target_weight }}">
                 <span>kg</span>
+                <div class="form__error">
+                    @error('weight')
+                        {{ $message }}
+                    @enderror
+                </div>
                 <div class="button-group">
                     <a href="/weight_logs">戻る</a>
                     <button class="target-weight__submit" type="submit">更新</button>
