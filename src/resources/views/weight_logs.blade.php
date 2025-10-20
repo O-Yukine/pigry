@@ -158,6 +158,7 @@
                     @endforeach
                 </table>
             </div>
+            {{ $weights->links() }}
         </div>
     </div>
 @endsection

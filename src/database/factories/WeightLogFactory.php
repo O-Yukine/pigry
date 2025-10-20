@@ -19,7 +19,7 @@ class WeightLogFactory extends Factory
             'weight' => $this->faker->randomFloat(1, 40, 120),
             'calories' => $this->faker->numberBetween(0, 3000),
             'exercise_time' => $this->faker->time('H:i'),
-            'exercise_content' => $this->faker->text()
+            'exercise_content' => $this->faker->realtext(20)
         ];
     }
 }

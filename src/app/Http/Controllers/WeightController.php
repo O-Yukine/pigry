@@ -42,9 +42,12 @@ class WeightController extends Controller
 
         $user = auth()->user();
         $weight_target = $user->weightTarget;
-        $weights = WeightLog::where('user_id', $user->id)->get();
+        $weights = WeightLog::where('user_id', $user->id)->paginate(8);
 
-        $latest_weight = $weights->sortByDesc('date')->first();
+        $latest_weight = WeightLog::where('user_id', $user->id)
+            ->orderBy('date', 'desc')
+            ->first();
+
 
         $remaining = null;
         if ($weight_target && $latest_weight) {
@@ -66,12 +69,13 @@ class WeightController extends Controller
         $weights = WeightLog::where('user_id', $user->id)
             ->when($date_from && $date_until, function ($query) use ($date_from, $date_until) {
                 $query->whereBetween('date', [$date_from, $date_until]);
-            })->orderBy('date', 'asc')->get();
+            })->orderBy('date', 'asc')->paginate(8);
 
         $weight_target = $user->weightTarget;
         $current_weights = WeightLog::where('user_id', $user->id)->get();
-
-        $latest_weight = $current_weights->sortByDesc('date')->first();
+        $latest_weight = WeightLog::where('user_id', $user->id)
+            ->orderBy('date', 'desc')
+            ->first();
 
         $remaining = null;
         if ($weight_target && $latest_weight) {
