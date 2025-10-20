@@ -66,7 +66,7 @@ class WeightController extends Controller
         $weights = WeightLog::where('user_id', $user->id)
             ->when($date_from && $date_until, function ($query) use ($date_from, $date_until) {
                 $query->whereBetween('date', [$date_from, $date_until]);
-            })->get();
+            })->orderBy('date', 'asc')->get();
 
         $weight_target = $user->weightTarget;
         $current_weights = WeightLog::where('user_id', $user->id)->get();
