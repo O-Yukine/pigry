@@ -7,6 +7,7 @@ use App\Models\WeightLog;
 use App\Models\WeightTarget;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateWeightLogsRequest;
+use App\Http\Requests\GoalSettingRequest;
 
 class WeightController extends Controller
 {
@@ -121,7 +122,7 @@ class WeightController extends Controller
         return view('goal_setting', compact('target_weight'));
     }
 
-    public function updateTargetWeight(CreateWeightLogsRequest $request)
+    public function updateTargetWeight(GoalSettingRequest $request)
     {
         $user_id = auth()->id();
 

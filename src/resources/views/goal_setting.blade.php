@@ -15,7 +15,7 @@
                     value="{{ $target_weight->target_weight }}">
                 <span>kg</span>
                 <div class="form__error">
-                    @error('weight')
+                    @error('target_weight')
                         {{ $message }}
                     @enderror
                 </div>
