@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="attendance__content">
+    <div class="weight-logs__panel">
         <div class="weight-table">
             <table class="weight-table__inner">
                 <tr class="weight-table__row">

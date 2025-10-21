@@ -1,50 +1,59 @@
-.attendance__panel {
-    margin: 0 auto;
-    width: 70%;
+.weight-logs__panel {
+    width: 1512px;
+    background-color: #dad5d5;
+    padding: 20px;
 }
-
 .weight-table {
-    margin: 30px auto;
+    padding-bottom: 10px;
+    margin: auto;
     width: 70%;
     text-align: center;
+    border-radius: 3px;
+    background-color: #fff;
 }
 
 .weight-table__inner {
     width: 100%;
+    text-align: left;
 }
 
 .weight-table__header {
     padding: 12px;
     width: 30%;
-    border-right: 1px solid #030303;
 }
 
 .weight-table__item {
     padding: 12px;
     width: 30%;
     font-weight: bold;
-    border-right: 1px solid #030303;
+    font-size: 30px;
+    border-right: 1px solid #cdcdcd;
 }
 
-.attendance__button {
-    width: 100%;
-    text-align: center;
-}
-
-.attendance__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
-}
 .weight-logs__contents {
+    padding: 20px;
     margin: 30px auto;
     width: 70%;
     text-align: center;
+    border-radius: 3px;
+    background-color: #fff;
 }
 .weight-logs__search {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+.weight-logs__search input {
+    width: 200px;
+    height: 30px;
+}
+.search-form__submit {
+    margin-left: 30px;
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    color: #fff;
+    background: #3c3c3b;
 }
 .weight-log__search-result {
     display: flex;
@@ -58,14 +67,15 @@
     background-color: #000;
     color: #fafafa;
 }
+
 .open-modal-btn {
     text-decoration: none;
     padding: 5px;
     width: 100px;
-    height: 50px;
+    height: 30px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: linear-gradient(to right, #f8c6d8, #ffd1a6, #d8b3f0);
     color: #fff;
     cursor: pointer;
 }
@@ -126,7 +136,7 @@
     height: 50px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: linear-gradient(to right, #f8c6d8, #ffd1a6, #d8b3f0);
     color: #fff;
     cursor: pointer;
 }
@@ -210,9 +220,8 @@
     text-decoration: none;
 }
 .pagination .active {
-    background-color: #007bff;
+    background: linear-gradient(to right, #f8c6d8, #ffd1a6, #d8b3f0);
     color: white;
-    border: 1px solid #007bff;
     padding: 5px 10px;
     margin: 0 4px;
     border-radius: 4px;

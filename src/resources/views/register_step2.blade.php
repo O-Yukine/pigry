@@ -13,7 +13,9 @@
 <body>
     <div class="register-form__content">
         <div class="register-form__heading">
+            <h1>PiGLy</h1>
             <h2>新規会員登録</h2>
+            <p>STEP2体重データの入力</p>
         </div>
         <form class="form" action="/register/step2" method="post">
             @csrf
@@ -48,7 +50,7 @@
                 </div>
             </div>
             <div class="form__button">
-                <button class="form__button-submit" type="submit">登録</button>
+                <button class="form__button-submit" type="submit">アカウント作成</button>
             </div>
         </form>
     </div>
