@@ -17,6 +17,7 @@ class CreateWeightTargetsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->decimal('target_weight', 4, 1)->comment('目標体重');;
+            // $table->unique('user_id');
             $table->timestamps();
         });
     }
