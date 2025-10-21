@@ -71,6 +71,8 @@ class WeightController extends Controller
                 $query->whereBetween('date', [$date_from, $date_until]);
             })->orderBy('date', 'asc')->paginate(8);
 
+        $counts = $weights->total();
+
         $weight_target = $user->weightTarget;
         $current_weights = WeightLog::where('user_id', $user->id)->get();
         $latest_weight = WeightLog::where('user_id', $user->id)
@@ -81,7 +83,7 @@ class WeightController extends Controller
         if ($weight_target && $latest_weight) {
             $remaining = $latest_weight->weight - $weight_target->target_weight;
         }
-        return view('weight_logs', compact('weight_target', 'weights', 'latest_weight', 'remaining'));
+        return view('weight_logs', compact('weight_target', 'weights', 'counts', 'latest_weight', 'remaining'));
     }
 
 

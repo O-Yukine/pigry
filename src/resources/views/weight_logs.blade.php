@@ -132,6 +132,11 @@
                 <!-- 🔘 モーダルを開くボタン -->
                 <a href="#weight-modal" class="open-modal-btn">データ追加</a>
             </div>
+            <div class="weight-log__search-result">
+                @if (request('from') && request('until'))
+                    <p> {{ request('from') }}〜{{ request('until') }} の検索結果 &nbsp{{ $counts }}件</p>
+                @endif
+            </div>
             <div class="weight-logs__table">
                 <table class="weight-logs__table-inner">
                     <tr class="weight-logs__table-row">
