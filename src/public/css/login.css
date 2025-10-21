@@ -1,7 +1,11 @@
-.login-form__content {
+body {
+    background: linear-gradient(to right, #fddde6, #ffe0cc, #e6d0f6);
     margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
+    padding: 10px 20px;
+    max-width: 1512px;
+    height: 70px;
+}
+.login-form__content {
 }
 
 .login-form__heading {

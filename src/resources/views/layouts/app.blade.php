@@ -22,7 +22,7 @@
                     <ul class="header-nav">
                         @if (Auth::check())
                             <li class="header-nav__item">
-                                <a href="/weight_logs/goal_setting">目標体重設定</a>
+                                <a class="header-nav__link" href="/weight_logs/goal_setting">目標体重設定</a>
                             </li>
                             <li class="header-nav__item">
                                 <form action="/logout" method="POST">

@@ -1,24 +1,20 @@
-.header {
-    background: #000;
-}
-
 .header__inner {
     margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
+    padding: 10px 20px;
+    max-width: 1512px;
+    height: 70px;
 }
 
 .header-utilities {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-bottom: 1px solid #cdcdcd;
 }
 
 .header__logo {
-    color: #fff;
+    color: rgb(234, 97, 177);
+
     text-decoration: none;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .header-utilities nav {
@@ -32,14 +28,18 @@
 }
 
 .header-nav__link {
-    color: #fff;
+    border: 1px solid#cdcdcd;
+    border-radius: 1px;
+    background: #cdcdcd;
+    font-size: 16px;
+    cursor: pointer;
     text-decoration: none;
 }
 
 .header-nav__button {
-    border: none;
-    background: transparent;
-    color: #fff;
+    border: 1px solid#cdcdcd;
+    border-radius: 1px;
+    background: #cdcdcd;
     font-size: 16px;
     cursor: pointer;
 }
