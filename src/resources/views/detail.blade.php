@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-    <div class="modal" id="weight-modal">
-        <div class="modal__inner">
-            <div class="modal__content">
+    <div class="weight-logs__detail">
+        <div class="detail__inner">
+            <div class="detail__content">
                 <h2>Weight Log</h2>
                 <form action="/weight_logs/{{ $weight->id }}/update" method="POST">
                     @method('patch')
@@ -88,8 +88,10 @@
                         </div>
                     </div>
                     <div class="form__button">
-                        <a href="/weight_logs">戻る</a>
-                        <button class="form__button-submit" type="submit">登録</button>
+                        <div class="form__button-link">
+                            <a href="/weight_logs">戻る</a>
+                        </div>
+                        <button class="form__button-submit" type="submit">更新</button>
                         <div class="trash-can-content">
                             <a href="/weight_logs/{{ $weight->id }}/delete">
                                 削除

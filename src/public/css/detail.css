@@ -1,15 +1,23 @@
-.modal__inner {
+.weight-logs__detail {
+    width: 1512px;
+    background-color: #dad5d5;
+}
+
+.detail__inner {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     width: 90%;
-    max-width: 800px;
+    width: 700px;
+    height: 670px;
     background: #fff;
-    padding: 40px;
+    padding: 0 20px;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
-
+.detail__content {
+    margin: 0;
+}
 /* フォームパーツ */
 .form {
     margin: 0 auto;
@@ -17,7 +25,7 @@
 }
 
 .form__group {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .form__label--required {
@@ -33,11 +41,11 @@
     color: #ff0000;
     text-align: left;
 }
-
+.form__input--date input,
 .form__input--text input,
 .form__input--textarea textarea {
     padding: 10px;
-    width: 250px;
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 3px;
 
@@ -53,19 +61,37 @@
 }
 
 .form__button {
-    margin-top: 30px;
+    position: relative;
+    display: flex;
+    margin: 10px;
+    justify-content: center;
 }
-
+.form__button-link {
+    padding: 5px;
+    margin-right: 10px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    border-radius: 3px;
+    background: #cdcdcd;
+    cursor: pointer;
+}
+.form__button a {
+    text-decoration: none;
+}
 .form__button-submit {
-    padding: 10px;
-    width: 80px;
-    height: 50px;
+    padding: 5px;
+    margin-right: 10px;
+    width: 100px;
+    height: 30px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: linear-gradient(to right, #f8c6d8, #ffd1a6, #d8b3f0);
     color: #fff;
     cursor: pointer;
 }
 .trash-can-content {
-    display: inline-block;
+    position: absolute;
+    right: 10px;
+    margin-top: 5px;
 }

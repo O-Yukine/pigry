@@ -145,7 +145,6 @@
                         <th class="weight-logs__table-header">体重</th>
                         <th class="weight-logs__table-header">食事摂取カロリー</th>
                         <th class="weight-logs__table-header">運動時間</th>
-                        <th class="weight-logs__table-header">運動内容</th>
                         <th class="weight-logs__table-header">編集</th>
                     </tr>
                     @foreach ($weights as $weight)
@@ -154,7 +153,6 @@
                             <td class="weight-logs__table-item">{{ $weight->weight }}</td>
                             <td class="weight-logs__table-item">{{ $weight->calories }}</td>
                             <td class="weight-logs__table-item">{{ $weight->exercise_time }}</td>
-                            <td class="weight-logs__table-item">{{ $weight->exercise_content }}</td>
                             <td class="weight-logs__table-item">
                                 <form action="/weight_logs/{{ $weight->id }}" class="form" method="get">
                                     <button class="weight-logs__button-submit">更新</button>
