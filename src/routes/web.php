@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WeightController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
@@ -15,15 +16,14 @@ use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 |
 */
 
-Route::middleware('guest')->group(function () {
-    // Fortifyの登録画面を /register/step1 に変更
-    Route::get('/register/step1', [WeightController::class, 'create'])->name('register');
-});
+Route::get('/register/step1', [UserController::class, 'showRegister'])->name('register');
+Route::post('/register/step1', [UserController::class, 'store']);
+Route::get('/register/step2', [WeightController::class, 'showWeightRegister']);
+Route::post('/register/step2', [WeightController::class, 'storeWeightRegister']);
+
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/register/step2', [WeightController::class, 'showWeightRegister']);
-    Route::post('/register/step2', [WeightController::class, 'storeWeightRegister']);
     Route::get('/weight_logs', [WeightController::class, 'showList']);
     Route::get('/weight_logs/goal_setting', [WeightController::class, 'showTargetWeight']);
     Route::patch('/weight_logs/goal_setting', [WeightController::class, 'updateTargetWeight']);

@@ -8,6 +8,7 @@ use App\Models\WeightTarget;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateWeightLogsRequest;
 use App\Http\Requests\GoalSettingRequest;
+use App\Http\Requests\RegisterStep2Request;
 
 class WeightController extends Controller
 {
@@ -15,11 +16,11 @@ class WeightController extends Controller
     {
         return view('register_step2');
     }
-    public function storeWeightRegister(Request $request)
+    public function storeWeightRegister(RegisterStep2Request $request)
     {
-        $user = auth()->user();
-        User::where('id', auth()->id())->update(['weight_register' => true]);
 
+        $user = auth()->user();
+        // User::where('id', auth()->id())->update(['weight_register' => true]);
         $weight_register = $request->only(['target_weight']);
         $weight_register['user_id'] = $user->id;
         WeightTarget::create($weight_register);
@@ -30,7 +31,7 @@ class WeightController extends Controller
             'date' => now(),
         ]);
 
-        return redirect('weight_logs');
+        return redirect('/weight_logs');
     }
 
     public function showList()

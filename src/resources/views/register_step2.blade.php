@@ -19,11 +19,11 @@
                     <div class="form__input--text">
                         <input type="text" name="weight" />
                     </div>
-                    {{-- <div class="form__error">
-                        @error('name')
+                    <div class="form__error">
+                        @error('weight')
                             {{ $message }}
                         @enderror
-                    </div> --}}
+                    </div>
                 </div>
             </div>
             <div class="form__group">
@@ -32,13 +32,13 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--text">
-                        <input type="text" name="target_weight" }}" />
+                        <input type="text" name="target_weight" />
                     </div>
-                    {{-- <div class="form__error">
-                        @error('email')
+                    <div class="form__error">
+                        @error('target_weight')
                             {{ $message }}
                         @enderror
-                    </div> --}}
+                    </div>
                 </div>
             </div>
             <div class="form__button">
