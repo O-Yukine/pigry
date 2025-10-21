@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WeightController;
 use Illuminate\Support\Facades\Route;
@@ -20,7 +21,7 @@ Route::get('/register/step1', [UserController::class, 'showRegister'])->name('re
 Route::post('/register/step1', [UserController::class, 'store']);
 Route::get('/register/step2', [WeightController::class, 'showWeightRegister']);
 Route::post('/register/step2', [WeightController::class, 'storeWeightRegister']);
-
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
 Route::middleware('auth')->group(function () {
 
