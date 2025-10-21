@@ -70,7 +70,9 @@
 .weight-logs__table-row {
     border-bottom: 1px solid #ddd;
 }
-
+.weight-logs__table-row:hover td {
+    background: #ddd;
+}
 .weight-logs__table-header {
     padding: 12px;
     width: 20%;
