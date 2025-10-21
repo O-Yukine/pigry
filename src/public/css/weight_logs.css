@@ -46,6 +46,18 @@
     display: flex;
     justify-content: space-between;
 }
+.weight-log__search-result {
+    display: flex;
+    text-align: left;
+}
+.search-reset {
+    margin: 15px;
+    padding: 3px;
+    text-decoration: none;
+    border: 3px sold black;
+    background-color: #000;
+    color: #fafafa;
+}
 .open-modal-btn {
     text-decoration: none;
     padding: 5px;

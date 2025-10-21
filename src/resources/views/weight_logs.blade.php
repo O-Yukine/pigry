@@ -135,6 +135,7 @@
             <div class="weight-log__search-result">
                 @if (request('from') && request('until'))
                     <p> {{ request('from') }}〜{{ request('until') }} の検索結果 &nbsp{{ $counts }}件</p>
+                    <a href="/weight_logs" class="search-reset">リセット</a>
                 @endif
             </div>
             <div class="weight-logs__table">
