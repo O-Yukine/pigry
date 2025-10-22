@@ -20,7 +20,9 @@
                     @enderror
                 </div>
                 <div class="button-group">
-                    <a href="/weight_logs">戻る</a>
+                    <div class="button-link">
+                        <a href="/weight_logs">戻る</a>
+                    </div>
                     <button class="target-weight__submit" type="submit">更新</button>
                 </div>
             </form>
