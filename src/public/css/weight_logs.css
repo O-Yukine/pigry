@@ -106,31 +106,8 @@
     width: 20%;
 }
 
-/* モーダル非表示の初期状態 */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    visibility: hidden;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* 🔓 :target のときだけ表示 */
-.modal:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* 背景（半透明） */
-.modal-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-.weight-logs__button-submit {
+.weight-logs__button-submit,
+.open-modal-btn {
     padding: 5px;
     width: 100px;
     height: 50px;
@@ -140,17 +117,24 @@
     color: #fff;
     cursor: pointer;
 }
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 /* モーダルの中身 */
 .modal__inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    max-width: 800px;
-    background: #fff;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 /* フォームパーツ */
@@ -160,9 +144,11 @@
 }
 
 .form__group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
-
+.form__group-title {
+    text-align: left;
+}
 .form__label--required {
     margin-left: 5px;
     padding: 4px 6px;
@@ -176,14 +162,13 @@
     color: #ff0000;
     text-align: left;
 }
-
+.form__input--date input,
 .form__input--text input,
 .form__input--textarea textarea {
     padding: 10px;
-    width: 250px;
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 3px;
-
     appearance: none;
 }
 
@@ -196,9 +181,25 @@
 }
 
 .form__button {
-    margin-top: 30px;
+    position: relative;
+    display: flex;
+    margin: 10px;
+    justify-content: center;
 }
-
+.form__button-link {
+    padding: 5px;
+    margin-right: 10px;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    border-radius: 3px;
+    background: #cdcdcd;
+    cursor: pointer;
+}
+.form__button a {
+    text-decoration: none;
+    padding-top: 10px;
+}
 .form__button-submit {
     padding: 10px;
     width: 80px;
