@@ -1,6 +1,7 @@
 .weight-logs__panel {
     width: 1512px;
-    background-color: #dad5d5;
+    height: 900px;
+    background-color: #eae8e8;
     padding: 20px;
 }
 .weight-table {

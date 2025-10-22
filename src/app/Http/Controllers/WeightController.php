@@ -52,7 +52,7 @@ class WeightController extends Controller
 
         $remaining = null;
         if ($weight_target && $latest_weight) {
-            $remaining = $latest_weight->weight - $weight_target->target_weight;
+            $remaining = $weight_target->target_weight - $latest_weight->weight;
         }
 
         return view('weight_logs', compact('weight_target', 'weights', 'latest_weight', 'remaining'));
