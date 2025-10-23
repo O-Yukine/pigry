@@ -24,7 +24,6 @@ Route::post('/register/step2', [WeightController::class, 'storeWeightRegister'])
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
 Route::middleware('auth')->group(function () {
-
     Route::get('/weight_logs', [WeightController::class, 'showList']);
     Route::get('/weight_logs/goal_setting', [WeightController::class, 'showTargetWeight']);
     Route::patch('/weight_logs/goal_setting', [WeightController::class, 'updateTargetWeight']);

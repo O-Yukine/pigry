@@ -3,8 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Http\Requests\CreateWeightLogsRequest;
-use App\Models\WeightLog;
+
 
 class AddWeight extends Component
 {

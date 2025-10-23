@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
 use Illuminate\Http\Request;
@@ -20,7 +19,7 @@ class WeightController extends Controller
     {
 
         $user = auth()->user();
-        // User::where('id', auth()->id())->update(['weight_register' => true]);
+
         $weight_register = $request->only(['target_weight']);
         $weight_register['user_id'] = $user->id;
         WeightTarget::create($weight_register);
@@ -39,16 +38,12 @@ class WeightController extends Controller
         // $user_id = auth()->id();
         // $weight_target = WeightTarget::where('user_id', $user_id)->get();
 
-        // return view('weight_logs', compact('weights', 'weight_target'));
-
         $user = auth()->user();
         $weight_target = $user->weightTarget;
         $weights = WeightLog::where('user_id', $user->id)->paginate(8);
 
         $latest_weight = WeightLog::where('user_id', $user->id)
-            ->orderBy('date', 'desc')
-            ->first();
-
+            ->orderBy('date', 'desc')->first();
 
         $remaining = null;
         if ($weight_target && $latest_weight) {
